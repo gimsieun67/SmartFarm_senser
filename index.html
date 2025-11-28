@@ -1,11 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>GreenCell SmartFarm 테스트</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <h1>안녕하세요</h1>
+<div class="container">
+
+    <h1>🌱 GreenCell SmartFarm API 테스트</h1>
+    
+    <!-- 로그인 -->
+    <div class="box">
+        <h2>1. 로그인</h2>
+        <input id="user_id" placeholder="아이디 입력">
+        <input id="password" type="password" placeholder="비밀번호 입력">
+        <button onclick="login()">로그인</button>
+        <p id="login_status"></p>
+    </div>
+    
+    <!-- 센서 데이터 -->
+    <div class="box">
+        <h2>2. 센서 데이터 전송</h2>
+        
+        <input id="temp" type="number" placeholder="온도(sensor_temp)">
+        <input id="ph" type="number" placeholder="pH(sensor_ph)">
+        <input id="humid" type="number" placeholder="습도(sensor_humid)">
+        <input id="electric" type="number" placeholder="전력(sensor_electric)">
+        <input id="total_electric" type="number" placeholder="누적 전력(sensor_total_electric)">
+        
+        <button onclick="sendSensor()">전송</button>
+        <p id="sensor_status"></p>
+    </div>
+    
+    <h2>응답 결과</h2>
+    <pre id="result"></pre>
+</div>
+
+  <script src="script.js"></script>
 </body>
 </html>
